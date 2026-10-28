@@ -10,6 +10,8 @@ import {
   LiveSites,
   Numbers,
   Process,
+  PrototypeSites,
+  Recommendations,
   Research,
   Stack,
   Work,
@@ -36,7 +38,9 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
             <Work work={t.work} lang={lang} view={t.project.view} />
             <Stack stack={t.stack} />
             <Experience experience={t.experience} />
+            <Recommendations recommendations={t.recommendations} />
             <LiveSites sites={t.sites} />
+            <PrototypeSites prototypes={t.prototypes} />
             <Research research={t.research} />
           </div>
         </div>

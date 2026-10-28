@@ -41,6 +41,12 @@ export const liveSites = [
   { name: "AMS Groupe", url: "https://www.amsgroupes.com", label: "amsgroupes.com" },
 ];
 
+export const prototypeSites = [
+  { name: "Nomadino", url: "https://personnelle.vercel.app/", label: "personnelle.vercel.app" },
+  { name: "La Cité Asiatique", url: "https://la-cit-asiatique.vercel.app/", label: "la-cit-asiatique.vercel.app" },
+  { name: "Retelem", url: "https://epe-retelem-spa.vercel.app/", label: "epe-retelem-spa.vercel.app" },
+];
+
 const en = {
   meta: {
     title: "Rahil Mohamed Islam — Full-Stack Developer & Data Engineer",
@@ -66,7 +72,7 @@ const en = {
   },
   about: {
     label: "02 / About",
-    text: "I’m Rahil Mohamed Islam — software engineer (Master’s, University of Boumerdès) based in Algiers. I design websites, SaaS platforms and mobile apps with two stacks: Node.js, Next.js and React for small and mid-size projects, Java, Spring Boot and Angular for large ones. On the data side, I built an unsupervised SIM-fraud detection model at Djezzy, published at IEEE AIIA 2025.",
+    text: "Rahil Mohamed Islam — software engineer based in Algiers. I design websites, SaaS platforms and mobile apps with two stacks: Node.js, Next.js and React for small and mid-size projects, Java, Spring Boot and Angular for large ones. On the data side, I built an unsupervised SIM-fraud detection model at Djezzy, published at IEEE AIIA 2025.",
     facts: ["Algiers, Algeria", "UTC+1", "Arabic · French · English"],
     available: "Available for new projects",
   },
@@ -282,9 +288,39 @@ const en = {
       },
     ],
   },
+  recommendations: {
+  label: "07c / Recommendations",
+  title: "What colleagues and managers say",
+  linkedin: "LinkedIn profile",
+  items: [
+    {
+      name: "Nihad Ahmed Bensoltane",
+      role: "Agency Manager & Marketing Expert",
+      company: "AMS Agency",
+      quote:
+        "Working with Islam at AMS Agency, I could always count on his commitment and professionalism. He takes every project seriously, respects deadlines and turns our marketing needs into clean, reliable digital solutions.",
+      image: "/nihad.jpeg",
+      linkedin: "https://www.linkedin.com/in/nihad-ahmed-bensoltane-282585276/",
+    },
+    {
+      name: "Oussama ABA",
+      role: "Lead Graphic Designer · Branding, Packaging, UI/UX",
+      company: "AMS Groupe",
+      quote:
+        "Collaborating with Islam at AMS Groupe was smooth and productive. He listens to design needs, respects the visual identity and turns mockups into faithful, polished interfaces.",
+      image: "/oussama.jpeg",
+      linkedin: "https://www.linkedin.com/in/oussama-aba-tlm/",
+    },
+  ],
+},
   sites: {
     label: "07 / Live websites",
     title: "Sites running in production",
+    visit: "Visit",
+  },
+    prototypes: {
+    label: "07b / Prototypes",
+    title: "Prototypes & concept sites",
     visit: "Visit",
   },
   research: {
@@ -431,7 +467,7 @@ const fr: Dict = {
   },
   about: {
     label: "02 / À propos",
-    text: "Je suis Rahil Mohamed Islam — ingénieur en génie logiciel (Master, Université de Boumerdès) basé à Alger. Je conçois des sites web, des solutions SaaS et des applications mobiles avec deux stacks : Node.js, Next.js et React pour les petits et moyens projets, Java, Spring Boot et Angular pour les grands. Côté data, j’ai développé chez Djezzy un modèle non supervisé de détection de fraude SIM, publié à IEEE AIIA 2025.",
+    text: "Rahil Mohamed Islam — ingénieur en génie logiciel basé à Alger. Je conçois des sites web, des solutions SaaS et des applications mobiles avec deux stacks : Node.js, Next.js et React pour les petits et moyens projets, Java, Spring Boot et Angular pour les grands. Côté data, j’ai développé chez Djezzy un modèle non supervisé de détection de fraude SIM, publié à IEEE AIIA 2025.",
     facts: ["Alger, Algérie", "UTC+1", "Arabe · Français · Anglais"],
     available: "Disponible pour de nouveaux projets",
   },
@@ -647,9 +683,39 @@ const fr: Dict = {
       },
     ],
   },
+  recommendations: {
+  label: "06/ Recommandations",
+  title: "Ce que disent mes collègues et supérieurs",
+  linkedin: "Profil LinkedIn",
+  items: [
+    {
+      name: "Nihad Ahmed Bensoltane",
+      role: "Responsable d’agence & Expert marketing",
+      company: "AMS Agency",
+      quote:
+        "En travaillant avec Islam chez AMS Agency, j’ai toujours pu compter sur son engagement et son professionnalisme. Il prend chaque projet au sérieux, respecte les délais et transforme nos besoins marketing en solutions digitales propres et fiables.",
+      image: "/nihad.jpeg",
+      linkedin: "https://www.linkedin.com/in/nihad-ahmed-bensoltane-282585276/",
+    },
+    {
+      name: "Oussama ABA",
+      role: "Lead Graphic Designer · Branding, Packaging, UI/UX",
+      company: "AMS Groupe",
+      quote:
+        "La collaboration avec Islam chez AMS Groupe a été fluide et productive. Il écoute les besoins de design, respecte l’identité visuelle et transforme les maquettes en interfaces fidèles et soignées.",
+      image: "/oussama.jpeg",
+      linkedin: "https://www.linkedin.com/in/oussama-aba-tlm/",
+    },
+  ],
+},
   sites: {
     label: "07 / Sites en ligne",
     title: "Des sites en production",
+    visit: "Visiter",
+  },
+    prototypes: {
+    label: "07b / Prototypes",
+    title: "Prototypes & sites concept",
     visit: "Visiter",
   },
   research: {

@@ -15,8 +15,9 @@ import {
   ShieldCheck,
   Terminal,
   Wrench,
+  Quote
 } from "lucide-react";
-import { liveSites, profile, ticker, type Dict, type Locale } from "@/content";
+import { liveSites,prototypeSites ,profile, ticker, type Dict, type Locale } from "@/content";
 import Halftone from "./Halftone";
 import { ExperienceList, FaqList } from "./Accordion";
 
@@ -296,6 +297,33 @@ export function LiveSites({ sites }: { sites: Dict["sites"] }) {
     </section>
   );
 }
+export function PrototypeSites({ prototypes }: { prototypes: Dict["prototypes"] }) {
+  return (
+    <section className={`${container} pb-24 md:pb-36`}>
+      <SectionHead label={prototypes.label} title={prototypes.title} />
+      <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        {prototypeSites.map((site, i) => (
+          <a
+            key={site.url}
+            href={site.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group border-l border-ink/80 px-4 pb-2 ${i % 2 ? "lg:mt-12" : ""}`}
+          >
+            <Globe size={18} className="text-muted" />
+            <h3 className="mt-4 font-display text-lg font-bold underline decoration-1 underline-offset-4 group-hover:decoration-accent group-hover:decoration-2">
+              {site.name}
+            </h3>
+            <p className="mt-2 text-[13px] text-muted">{site.label}</p>
+            <p className="mt-5 flex items-center gap-1 text-[11px] uppercase tracking-wider text-accent-dark">
+              {prototypes.visit} <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 export function Research({ research }: { research: Dict["research"] }) {
   return (
@@ -371,6 +399,66 @@ export function Process({ process }: { process: Dict["process"] }) {
             })}
           </ol>
         </div>
+      </div>
+    </section>
+  );
+}
+
+
+export function Recommendations({ recommendations }: { recommendations: Dict["recommendations"] }) {
+  const cols = recommendations.items.length === 2 ? "lg:grid-cols-2" : "lg:grid-cols-3";
+  return (
+    <section className={`${container} pb-24 md:pb-36`}>
+      <SectionHead label={recommendations.label} title={recommendations.title} />
+      <div className={`grid gap-x-8 gap-y-10 sm:grid-cols-2 ${cols}`}>
+        {recommendations.items.map((r) => (
+          <figure
+            key={r.linkedin}
+            className="flex flex-col border-l border-ink/80 px-4 pb-2"
+          >
+            <Quote size={18} className="text-accent-dark" />
+            <blockquote className="mt-4 text-[13px] leading-relaxed text-muted">
+              “{r.quote}”
+            </blockquote>
+            <figcaption className="mt-auto flex items-center gap-5 pt-6">
+              <div className="relative size-24 shrink-0 overflow-hidden bg-panel md:size-28">
+                {r.image ? (
+                  <Image
+                    src={r.image}
+                    alt={r.name}
+                    fill
+                    sizes="112px"
+                    className="object-cover object-top grayscale"
+                  />
+                ) : (
+                  <span className="grid h-full w-full place-items-center font-display text-lg font-bold">
+                    {r.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+                  </span>
+                )}
+              </div>
+              <div>
+                <p className="font-display text-base font-bold">{r.name}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-wider text-soft">
+                  {r.role} · {r.company}
+                </p>
+                <a
+                  href={r.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mt-2 flex w-fit items-center gap-1 text-[11px] uppercase tracking-wider text-accent-dark"
+                >
+                  <span className="underline decoration-1 underline-offset-4 group-hover:decoration-accent group-hover:decoration-2">
+                    {recommendations.linkedin}
+                  </span>
+                  <ArrowUpRight
+                    size={14}
+                    className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </a>
+              </div>
+            </figcaption>
+          </figure>
+        ))}
       </div>
     </section>
   );
